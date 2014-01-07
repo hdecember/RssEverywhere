@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title>Bootstrap 101 Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-type" content=
+  "text/html; charset=utf-8" />
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/mypage.css" rel="stylesheet" media="screen">
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/mypage.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+function testGetUrl () {
+  var url = "";
+    try {
+        url = window.top.document.referrer
+    } catch(M) {
+        if (window.parent) {
+            try {
+                url = window.parent.document.referrer
+            } catch(L) {
+                url = ""
+            }
+        }
+    }
+    if (url === "") {
+        url = document.referrer
+    }
+    return url
+}
+alert(testGetUrl());
+alert('sssss');
+</script>
+  <div id="content">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              Step 1. Specify source page address (URL)
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="url" id="urlInput">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="getURLContentBtn">Go!</button>
+              </span>
+            </div>
+            <span class="label label-primary" id="encoding">utf-8</span>
+            <div><textarea class="ta" disabled="true" id="URLContentDIV"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Step 2. Define extraction rules
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div>
+              Global Search Pattern:
+              <textarea class="ta" id="globalSearchPattern"></textarea>
+            </div>
+            <div>
+              Item (repeatable) Search Pattern*:
+              <textarea class="ta" id="itemSearchPattern"></textarea>
+            </div>
+            <button type="button" id="extractBtn" class="btn btn-default pull-right">Extract!</button>
+            <div>
+              <span>Clipped Data:</span>
+              <textarea class="ta" disabled="true" id="clipedData"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              Step 3. Define output format
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="input-group ">
+              <span class="input-group-addon">Title</span>
+              <input type="text" id="titleInput" class="form-control" placeholder="title">
+            </div>
+            <div class="input-group ">
+              <span class="input-group-addon">Item Title</span>
+              <input type="text" id="itemTitleInput" class="form-control" placeholder="item title">
+            </div>
+            <div class="input-group ">
+              <span class="input-group-addon">Item Link</span>
+              <input type="text" id="itemLinkInput" class="form-control" placeholder="item link">
+            </div>
+            <div class="input-group ">
+              <span class="input-group-addon">Item Content</span>
+              <input type="text" id="itemContentInput" class="form-control" placeholder="item content">
+            </div>
+            <button type="button" id="previewBtn" class="btn btn-default pull-right">Preview!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="well"><a id="rssLink" ></a>
+    </div>
+  </div>
+</body>
+</html>

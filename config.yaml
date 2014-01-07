@@ -1,0 +1,15 @@
+---
+name: superfreak
+version: 1
+libraries:
+- name: "django"
+  version: "1.4"
+name: crontest
+version: 1
+cron:
+- description: cron_test
+  url: /syncFeed/
+  schedule: "*/10 * * * *"
+- description: bbs
+  url: /syncWeibo/
+  schedule: "*/10 * * * *"

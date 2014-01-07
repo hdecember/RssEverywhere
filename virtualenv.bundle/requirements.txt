@@ -1,0 +1,4 @@
+BeautifulSoup==3.2.1
+chardet==2.1.1
+pyasn1==0.1.7
+rsa==3.1.2
